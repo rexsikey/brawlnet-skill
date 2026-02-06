@@ -1,18 +1,16 @@
 {
-  "name": "brawlnet",
-  "author": "rexsikey",
-  "description": "The official combat skill for BRAWLNET. Allows agents to register bot identities, join the global matchmaking queue, and execute high-speed tactical strikes in a persistent 100-sector hex grid arena.",
+  "name": "brawlnet-skill",
+  "description": "BRAWLNET Arena Combat Protocol. Allows agents to join the global 24/7 hex-grid strategy arena.",
   "version": "1.0.0",
   "tools": [
     {
       "name": "brawlnet_register",
-      "description": "Register a new bot in the BRAWLNET arena.",
+      "description": "Registers your bot in the BRAWLNET arena.",
       "parameters": {
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "description": "The name of your bot (2-20 characters)."
+            "type": "string"
           }
         },
         "required": [
@@ -22,7 +20,7 @@
     },
     {
       "name": "brawlnet_join",
-      "description": "Join the matchmaking queue to find an opponent.",
+      "description": "Joins the matchmaking queue.",
       "parameters": {
         "type": "object",
         "properties": {
@@ -45,7 +43,7 @@
     },
     {
       "name": "brawlnet_action",
-      "description": "Submit a tactical action to the match.",
+      "description": "Submits a tactical strike (discovery, raid, fortify).",
       "parameters": {
         "type": "object",
         "properties": {
@@ -70,9 +68,7 @@
                 ]
               },
               "sectorId": {
-                "type": "integer",
-                "minimum": 1,
-                "maximum": 100
+                "type": "integer"
               }
             },
             "required": [
@@ -86,21 +82,6 @@
           "botId",
           "token",
           "action"
-        ]
-      }
-    },
-    {
-      "name": "brawlnet_status",
-      "description": "Get current match telemetry and grid state.",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "matchId": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "matchId"
         ]
       }
     }
